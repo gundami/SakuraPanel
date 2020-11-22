@@ -134,6 +134,25 @@ if(isset($_GET['toggle']) && preg_match("/^[0-9]{1,10}$/", $_GET['toggle'])) {
 	}
 }
 
+function http_post_json($url, $jsonStr)
+		{
+    		$ch = curl_init();
+    		curl_setopt($ch, CURLOPT_POST, 1);
+    		curl_setopt($ch, CURLOPT_URL, $url);
+    		curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonStr);
+    		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    		        'Content-Type: application/json; charset=utf-8',
+    		        'Content-Length: ' . strlen($jsonStr)
+    		    )
+    		);
+    		$response = curl_exec($ch);
+    		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    		curl_close($ch);
+		
+    		return array($httpCode, $response);
+		}
+
 if(isset($_GET['delete']) && preg_match("/^[0-9]{1,10}$/", $_GET['delete'])) {
 	ob_clean();
 	SakuraPanel\Utils::checkCsrf();
@@ -143,8 +162,14 @@ if(isset($_GET['delete']) && preg_match("/^[0-9]{1,10}$/", $_GET['delete'])) {
 			if($rs['status'] == '3') {
 				exit("此隧道已经被管理员封禁，无法删除");
 			} else {
-				Database::delete("proxies", Array("id" => $rs['id']));
+				
 				$nm->closeClient($rs['node'], $um->getUserToken($_SESSION['user']));
+				$proxyname = $pm->getProxyInfo($rs['id']);
+				$ni = $nm->getNodeInfo($proxyname['node']);
+				$post_url="http://127.0.0.1:".$ni['port']."/haproxy/api";
+				$jsonStr = json_encode(array('action' => "delete", 'name' => $proxyname['proxy_name']));
+				http_post_json($post_url, $jsonStr);
+				Database::delete("proxies", Array("id" => $rs['id']));
 				exit("隧道删除成功，请刷新页面");
 			}
 		} else {

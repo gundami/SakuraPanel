@@ -132,7 +132,7 @@ if(isset($_GET['getinfo']) && preg_match("/^[0-9]{1,10}$/", $_GET['getinfo'])) {
 						<p><input type="text" class="form-control" id="node_description"></input></p>
 						<p><b>主机名称</b>&nbsp;&nbsp;<small>这里可以是一个域名或者 IP 地址</small></p>
 						<p><input type="text" class="form-control" id="node_hostname"></input></p>
-						<p><b>IP 地址</b>&nbsp;&nbsp;<small>服务器的 IP 地址，请不要输入域名</small></p>
+						<p><b>IP 地址</b>&nbsp;&nbsp;<small>服务器的 IP 地址，域名也行</small></p>
 						<p><input type="text" class="form-control" id="node_ip"></input></p>
 						<p><b>节点端口</b>&nbsp;&nbsp;<small>节点的 Frps 服务器运行端口</small></p>
 						<p><input type="number" class="form-control" id="node_port"></input></p>

@@ -92,6 +92,7 @@ $ss = Database::toArray(Database::search("nodes", Array("group" => "{$rs['group'
                     </div>
                     <div class="card-body">
 						<p>每次创建完映射或删除了映射之后配置文件都会发生变化，请在变更后及时更新您的配置文件。</p>
+						<p>如果配置文件内容显示Array，请选择另外一个服务器再切回去就行</p>
 						<p class='text-danger'>请勿泄露配置文件中 user 字段的内容，否则他人可以登录您的账号，截图注意打码。</p>
 						<p>不过，如果真的泄露了，可以通过修改密码来解决，User 字段的内容也会随之更新。</p>
 						<div class="sub-heading">
@@ -124,7 +125,7 @@ $ss = Database::toArray(Database::search("nodes", Array("group" => "{$rs['group'
 prettyPrint();
 window.onload = function() {
 	$('#server').change(function() {
-		location = "/?page=panel&module=configuration&server=" + $(this).children('option:selected').val();
+		location = "/panel/?page=panel&module=configuration&server=" + $(this).children('option:selected').val();
 	});
 }
 </script>

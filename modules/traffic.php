@@ -17,7 +17,7 @@ if(isset($_GET['getinfo']) && preg_match("/^[0-9]{1,10}$/", $_GET['getinfo'])) {
 	$nm = new SakuraPanel\NodeManager();
 	$rs = $nm->getNodeInfo($_GET['getinfo']);
 	if(is_array($rs)) {
-		$hs = SakuraPanel\Utils::http("http://admin:{$rs['admin_pass']}@{$rs['ip']}:{$rs['admin_port']}/api/serverinfo");
+		$hs = SakuraPanel\Utils::http("http://admin:{$rs['admin_pass']}@"."127.0.0.1".":{$rs['admin_port']}/api/serverinfo");
 		if(isset($hs['status']) && $hs['status'] == 200) {
 			$js = json_decode($hs['body'], true);
 			$tf_in  = SakuraPanel\Utils::getFormatTraffic($js['total_traffic_in']);
@@ -54,7 +54,7 @@ if(isset($_GET['gettraffic']) && preg_match("/^[0-9]{1,10}$/", $_GET['gettraffic
 	$rs = $nm->getNodeInfo($_GET['gettraffic']);
 	$tokens = $um->getTokensToUsers();
 	if(is_array($rs)) {
-		$hs = SakuraPanel\Utils::http("http://admin:{$rs['admin_pass']}@{$rs['ip']}:{$rs['admin_port']}/api/proxy/{$_GET['type']}");
+		$hs = SakuraPanel\Utils::http("http://admin:{$rs['admin_pass']}@"."127.0.0.1".":{$rs['admin_port']}/api/proxy/{$_GET['type']}");
 		if(isset($hs['status']) && $hs['status'] == 200) {
 			$js = json_decode($hs['body'], true);
 			echo '<table class="table table-striped table-valign-middle" style="width: 100%;font-size: 15px;margin-top: 12px;margin-bottom: 0px;">';

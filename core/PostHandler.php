@@ -7,6 +7,24 @@ class PostHandler {
 	
 	public function switcher($params)
 	{
+		function http_post_json($url, $jsonStr)
+		{
+    		$ch = curl_init();
+    		curl_setopt($ch, CURLOPT_POST, 1);
+    		curl_setopt($ch, CURLOPT_URL, $url);
+    		curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonStr);
+    		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    		        'Content-Type: application/json; charset=utf-8',
+    		        'Content-Length: ' . strlen($jsonStr)
+    		    )
+    		);
+    		$response = curl_exec($ch);
+    		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    		curl_close($ch);
+		
+    		return array($httpCode, $response);
+		}
 		global $_config;
 		
 		if(isset($params['action']) && preg_match("/^[A-Za-z0-9\_\-]{1,20}$/", $params['action'])) {
@@ -88,6 +106,12 @@ class PostHandler {
 						if(is_array($result) && isset($result[0])) {
 							if($result[0]) {
 								if($pm->addProxy($_POST)) {
+									$nm = new SakuraPanel\NodeManager();
+									$ni = $nm->getNodeInfo($_POST['node']);
+									$post_url="http://127.0.0.1:".$ni['port']."/haproxy/api";
+									$jsonStr = json_encode(array('action' => "add", 'name' => $_POST['proxy_name'],'domain'=> $_POST['domain'] ,'port' => $_POST['remote_port']));
+									http_post_json($post_url, $jsonStr);
+									
 									exit("隧道创建成功");
 								} else {
 									exit("隧道创建失败，请联系管理员：" . Database::fetchError());
@@ -180,7 +204,7 @@ class PostHandler {
 								'name'        => SakuraPanel\Regex::TYPE_NOTEMPTY,
 								'description' => SakuraPanel\Regex::TYPE_NOTEMPTY,
 								'hostname'    => SakuraPanel\Regex::TYPE_HOSTNAME,
-								'ip'          => SakuraPanel\Regex::TYPE_IPV4_V6,
+								'ip'          => SakuraPanel\Regex::TYPE_HOSTNAME,
 								'port'        => SakuraPanel\Regex::TYPE_NUMBER,
 								'admin_port'  => SakuraPanel\Regex::TYPE_NUMBER,
 								'admin_pass'  => SakuraPanel\Regex::TYPE_NOTEMPTY,
@@ -230,7 +254,7 @@ class PostHandler {
 								'name'        => SakuraPanel\Regex::TYPE_NOTEMPTY,
 								'description' => SakuraPanel\Regex::TYPE_NOTEMPTY,
 								'hostname'    => SakuraPanel\Regex::TYPE_HOSTNAME,
-								'ip'          => SakuraPanel\Regex::TYPE_IPV4_V6,
+								'ip'          => SakuraPanel\Regex::TYPE_HOSTNAME,
 								'port'        => SakuraPanel\Regex::TYPE_NUMBER,
 								'admin_port'  => SakuraPanel\Regex::TYPE_NUMBER,
 								'admin_pass'  => SakuraPanel\Regex::TYPE_NOTEMPTY,

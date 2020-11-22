@@ -112,12 +112,7 @@ if(isset($_GET['randomport'])) {
 							<div class="col-sm-6">
 								<p><b>隧道类型</b> <small class="pdesc">每种隧道类型的区别请看右侧介绍</small></p>
 								<p><select class="form-control" id="proxy_type">
-									<option value="tcp">TCP 隧道</option>
-									<option value="udp">UDP 隧道</option>
-									<option value="http">HTTP 隧道</option>
-									<option value="https">HTTPS 隧道</option>
-									<option value="stcp">STCP 隧道</option>
-									<option value="xtcp">XTCP 隧道</option>
+									<option value="tcp">Minecraft 隧道</option>
 								</select></p>
 							</div>
 							<div class="col-sm-6">
@@ -129,11 +124,11 @@ if(isset($_GET['randomport'])) {
 								<p><input type="text" class="form-control" id="local_port" placeholder="80" /></p>
 							</div>
 							<div class="col-sm-6">
-								<p><b>远程端口</b> <small class="pdesc">给访客连接时使用的外部端口 (<a href="javascript:loadPortRules();">查看规则</a>)</small></p>
+								<p><b>远程端口</b> <small class="pdesc">远程内部端口，随机就行 (<a href="javascript:loadPortRules();">查看规则</a>)</small></p>
 								<p><input type="text" class="form-control" id="remote_port" placeholder="1234" /></p>
 							</div>
 							<div class="col-sm-6">
-								<p><b>绑定域名</b> <small class="pdesc">仅限 HTTP 和 HTTPS 类型的隧道</small></p>
+								<p><b>绑定域名</b> <small class="pdesc">连接Minecraft服务器的域名</small></p>
 								<p><input type="text" class="form-control" id="domain" placeholder="example.com" /></p>
 							</div>
 							<div class="sub-heading">
@@ -188,19 +183,12 @@ if(isset($_GET['randomport'])) {
                         </div>
                     </div>
                     <div class="card-body fix-text">
-						<p><b>提示：</b>XTCP 映射成功率并不高，具体取决于 NAT 设备的复杂度。</p>
-						<p><b>TCP 映射</b></p>
-						<p>基础的 TCP 映射，适用于大多数服务，例如远程桌面、SSH、Minecraft、泰拉瑞亚等</p>
-						<p><b>UDP 映射</b></p>
-						<p>基础的 UDP 映射，适用于域名解析、部分基于 UDP 协议的游戏等</p>
+						<p><b>Minecraft 映射</b></p>
+						<p>基于域名的MInecraft服务器映射</p>
 						<p><b>HTTP 映射</b></p>
-						<p>搭建网站专用映射，并通过 80 端口访问。</p>
+						<p>搭建网站专用映射，暂不可用</p>
 						<p><b>HTTPS 映射</b></p>
-						<p>带有 SSL 加密的网站映射，通过 443 端口访问，服务器需要支持 SSL。</p>
-						<p><b>XTCP 映射</b></p>
-						<p>客户端之间点对点 (P2P) 连接协议，流量不经过服务器，适合大流量传输的场景，需要两台设备之间都运行一个客户端。</p>
-						<p><b>STCP 映射</b></p>
-						<p>安全交换 TCP 连接协议，基于 TCP，访问此服务的用户也需要运行一个客户端，才能建立连接，流量由服务器转发。</p>
+						<p>带有 SSL 加密的网站映射，暂不可用</p>
                     </div>
                 </div>
             </div>

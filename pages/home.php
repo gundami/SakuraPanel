@@ -32,8 +32,8 @@
                 <div class="container">
                     <div class="hero-inner">
 						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0 is-revealing">Sakura Panel</h1>
-	                        <p class="hero-paragraph is-revealing">免费的 Frp 内网穿透管理面板</p>
+	                        <h1 class="hero-title mt-0 is-revealing">Prism Accelerator</h1>
+	                        <p class="hero-paragraph is-revealing">全新的公益Minecraft服务器穿透加速解决方案</p>
 	                        <p class="hero-cta mb-0 is-revealing">
 								<a class="button button-primary button-shadow" href="?page=login">立即开始使用</a>
 							</p>
@@ -70,13 +70,13 @@
                 </div>
             </section>-->
 
-			<section class="features section text-center">
+			<<section class="features section text-center">
                 <div class="container">
                     <div class="features-inner section-inner has-top-divider">
 						<div class="features-header text-center">
 							<div class="container-sm">
-								<h2 class="section-title mt-0">为什么选择 Sakura Panel</h2>
-								<p class="section-paragraph mb-0">这是一款轻快、功能强大的内网穿透面板</p>
+								<h2 class="section-title mt-0">为什么选择 Prism Accelerator</h2>
+								<p class="section-paragraph mb-0">这是一个高性能的全新穿透平台</p>
 							</div>
 						</div>
                         <div class="features-wrap">
@@ -85,8 +85,8 @@
                                     <div class="feature-icon">
                                         <img src="assets/home/dist/images/feature-icon-01.svg" alt="Feature 01">
                                     </div>
-                                    <h4 class="feature-title">多功能</h4>
-                                    <p class="text-sm">支持多用户、多节点、流量控制、访问控制等功能，可随意定制</p>
+                                    <h4 class="feature-title">高防高速节点</h4>
+                                    <p class="text-sm">采用面板服穿透，享受多线优化的优秀的网络质量</p>
                                 </div>
                             </div>
                             <div class="feature is-revealing">
@@ -94,8 +94,8 @@
                                     <div class="feature-icon">
                                         <img src="assets/home/dist/images/feature-icon-02.svg" alt="Feature 02">
                                     </div>
-                                    <h4 class="feature-title">更方便</h4>
-                                    <p class="text-sm">所有的功能都是为了简洁而设计，没有复杂的操作，使用更简单</p>
+                                    <h4 class="feature-title">使用方便</h4>
+                                    <p class="text-sm">简洁操作，使用简单，一目了然</p>
                                 </div>
                             </div>
                             <div class="feature is-revealing">
@@ -103,8 +103,8 @@
                                     <div class="feature-icon">
                                         <img src="assets/home/dist/images/feature-icon-03.svg" alt="Feature 03">
                                     </div>
-                                    <h4 class="feature-title">更美观</h4>
-                                    <p class="text-sm">管理面板基于 AdminLTE 3，美观大气，赏心悦目，颜值丝毫不输</p>
+                                    <h4 class="feature-title">完全免费</h4>
+                                    <p class="text-sm">平台的超低成本开销，才能做到真正的完全免费公益</p>
                                 </div>
                             </div>
                             <div class="feature is-revealing">
@@ -112,8 +112,8 @@
                                     <div class="feature-icon">
                                         <img src="assets/home/dist/images/feature-icon-04.svg" alt="Feature 04">
                                     </div>
-                                    <h4 class="feature-title">高性能</h4>
-                                    <p class="text-sm">整个系统采用前后端分离设计，后端对接 Frps 独立处理数据</p>
+                                    <h4 class="feature-title">自研技术</h4>
+                                    <p class="text-sm">自研核心技术，经过长时间测试考验</p>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                 </div>
             </section>
 
-			<section class="testimonials section">
+			<!--<section class="testimonials section">
 				<div class="container">
 					<div class="testimonials-inner section-inner">
 						<div class="testimonials-header text-center text-light">
@@ -203,9 +203,9 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>-->
 
-            <section class="pricing section">
+            <!--<section class="pricing section">
                 <div class="container">
                     <div class="pricing-inner section-inner">
                         <h2 class="section-title mt-0 text-center">价格介绍</h2>
@@ -269,14 +269,14 @@
 						</div>
                     </div>
                 </div>
-            </section>
+            </section>-->
 
 			<section class="cta section">
 				<div class="container">
 					<div class="cta-inner section-inner is-revealing">
 						<h3 class="section-title mt-0">仍然有疑问？</h3>
 						<div class="cta-cta">
-							<a class="button button-primary button-shadow" href="#">联系在线客服</a>
+							<a class="button button-primary button-shadow" href="https://jq.qq.com/?_wv=1027&k=phuV5Iwh">加入交流QQ群</a>
 						</div>
 					</div>
 				</div>
@@ -293,19 +293,13 @@
                     </div>
                     <ul class="footer-links list-reset">
                         <li>
-                            <a href="#">联系我们</a>
+                            <a href="https://jq.qq.com/?_wv=1027&k=phuV5Iwh">联系我们</a>
                         </li>
                         <li>
                             <a href="#">关于我们</a>
                         </li>
-                        <li>
-                            <a href="#">常见问题</a>
-                        </li>
-                        <li>
-                            <a href="#">技术支持</a>
-                        </li>
-                    </ul>
-                    <ul class="footer-social-links list-reset">
+					</ul>
+					<ul class="footer-social-links list-reset">
                         <li>
                             <a href="#">
                                 <span class="screen-reader-text">Facebook</span>
@@ -331,7 +325,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="footer-copyright">&copy; <?php echo date("Y"); ?> Sakura Panel</div>
+                    <div class="footer-copyright">&copy; <?php echo date("Y"); ?> Prism Accelerator</div>
                 </div>
             </div>
         </footer>

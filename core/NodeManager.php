@@ -9,7 +9,7 @@ class NodeManager {
 	{
 		$ninfo = $this->getNodeInfo($node);
 		if($ninfo) {
-			$result = SakuraPanel\Utils::http("http://admin:{$ninfo['admin_pass']}@{$ninfo['ip']}:{$ninfo['admin_port']}/api/client/close/{$token}");
+			$result = SakuraPanel\Utils::http("http://admin:{$ninfo['admin_pass']}@"."127.0.0.1".":{$ninfo['admin_port']}/api/client/close/{$token}");
 			if(isset($result['body'])) {
 				$json   = json_decode($result['body'], true);
 				if(is_array($json)) {
